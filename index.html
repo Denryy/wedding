@@ -98,29 +98,38 @@
   <!-- ===================================================
      ДАТА + ВРЕМЯ + COUNTDOWN В ОДНОМ БЛОКЕ
 =================================================== -->
+<!-- ===================================================
+     DATE + TIME + COUNTDOWN
+=================================================== -->
 <section class="section datetime reveal" id="datetimeSection">
+
   <div class="container">
 
     <h2 class="section__title" id="datetimeTitle"></h2>
 
     <div class="datetime__card">
 
-      <!-- Дата -->
-      <div class="datetime__item">
-        <span class="datetime__icon">✧</span>
-        <span class="datetime__value" id="eventDate"></span>
+      <!-- TOP -->
+      <div class="datetime__top">
+
+        <!-- DATE -->
+        <div class="datetime__item">
+          <span class="datetime__icon">✧</span>
+          <span class="datetime__value" id="eventDate"></span>
+        </div>
+
+        <!-- LINE -->
+        <div class="datetime__sep"></div>
+
+        <!-- TIME -->
+        <div class="datetime__item">
+          <span class="datetime__icon">✦</span>
+          <span class="datetime__value" id="eventTime"></span>
+        </div>
+
       </div>
 
-      <!-- Разделитель -->
-      <div class="datetime__sep"></div>
-
-      <!-- Время -->
-      <div class="datetime__item">
-        <span class="datetime__icon">✦</span>
-        <span class="datetime__value" id="eventTime"></span>
-      </div>
-
-      <!-- Countdown -->
+      <!-- COUNTDOWN -->
       <div class="datetime__countdown">
 
         <div class="countdown__grid">
@@ -154,8 +163,8 @@
     <p class="datetime__note" id="datetimeNote"></p>
 
   </div>
-</section>
 
+</section>
   <!-- ===================================================
        5. COUNTDOWN — обратный отсчёт
   =================================================== -->
