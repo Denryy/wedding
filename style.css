@@ -428,7 +428,7 @@ body {
 .countdown__label {
   margin-top: 5px;
 
-  font-size: 0.7rem;
+  font-size: 1rem;
 
   color: #8b7355;
 
@@ -479,7 +479,7 @@ body {
   }
 
   .countdown__label {
-    font-size: 0.66rem;
+    font-size: 0.9rem;
   }
 
 }
