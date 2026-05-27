@@ -65,8 +65,7 @@ const CONFIG = {
     sectionTitle: "Той иелері",
     list: [
       {
-        role: "Күйеу жігіт жағынан",
-        name: "Асхат\nжәне Ақжарқын",
+        name: "Асхат - Ақжарқын",
         wide: false,
       }
     ],
