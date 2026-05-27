@@ -488,13 +488,13 @@ body {
 @media (max-width: 480px) {
 
   .countdown__grid {
-    grid-template-columns: repeat(2, 1fr);
-    row-gap: 18px;
+    grid-template-columns: repeat(4, 1fr);
+    row-gap: 4px;
   }
 
   .countdown__num {
-    width: 62px;
-    height: 62px;
+    width: 48px;
+    height: 48px;
 
     font-size: 1.7rem;
   }
