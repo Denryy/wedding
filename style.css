@@ -264,20 +264,51 @@ body {
   line-height: 1.4;
 }
 
-/* ── ── ── ── ── ── ── ── ── ── ── ── ── ── ── ──
-   ДАТА И ВРЕМЯ
-   ── ── ── ── ── ── ── ── ── ── ── ── ── ── ── ── */
+/* ─────────────────────────────────────────
+   DATE & TIME — REF STYLE
+───────────────────────────────────────── */
+
+.datetime {
+  background: #f5f1ea;
+}
+
+.datetime .container {
+  position: relative;
+}
+
 .datetime__card {
+  position: relative;
+  background:
+    linear-gradient(
+      180deg,
+      rgba(255,255,255,0.96) 0%,
+      rgba(255,255,255,0.90) 100%
+    );
+  border: 1px solid rgba(201,169,110,0.35);
+  border-radius: 36px;
+  padding: 34px 22px;
   display: flex;
   align-items: center;
   justify-content: center;
   gap: 0;
-  background: #fff;
-  border: 1px solid var(--color-border);
-  border-radius: var(--radius-lg);
-  box-shadow: var(--shadow-card);
+  box-shadow:
+    0 10px 30px rgba(176,141,87,0.08),
+    inset 0 1px 0 rgba(255,255,255,0.7);
   overflow: hidden;
-  margin-bottom: 24px;
+  backdrop-filter: blur(4px);
+}
+
+.datetime__card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(
+      circle at top left,
+      rgba(255,255,255,0.8),
+      transparent 40%
+    );
+  pointer-events: none;
 }
 
 .datetime__item {
@@ -285,38 +316,50 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 28px 16px;
-  gap: 8px;
+  gap: 10px;
+  padding: 10px 12px;
+  position: relative;
+  z-index: 1;
 }
 
 .datetime__icon {
-  font-size: 1.6rem;
+  font-size: 1.8rem;
+  opacity: 0.85;
+  filter: saturate(0.8);
 }
 
 .datetime__value {
   font-family: 'Cormorant Garamond', serif;
-  font-size: clamp(1.1rem, 4vw, 1.5rem);
+  font-size: clamp(1.15rem, 4vw, 1.5rem);
   font-style: italic;
-  color: var(--color-primary);
+  color: #c29a5c;
   text-align: center;
-  line-height: 1.3;
+  line-height: 1.4;
+  letter-spacing: 0.02em;
 }
 
 .datetime__sep {
   width: 1px;
-  height: 60px;
-  background: var(--color-border);
-  flex-shrink: 0;
+  height: 72px;
+  background:
+    linear-gradient(
+      to bottom,
+      transparent,
+      rgba(201,169,110,0.7),
+      transparent
+    );
 }
 
 .datetime__note {
+  margin-top: 26px;
   text-align: center;
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(1rem, 3.2vw, 1.15rem);
   font-style: italic;
-  color: var(--color-text-muted);
-  font-size: clamp(0.9rem, 3vw, 1rem);
-  padding: 0 8px;
+  line-height: 1.8;
+  color: #8b7355;
+  padding: 0 12px;
 }
-
 /* ── ── ── ── ── ── ── ── ── ── ── ── ── ── ── ──
    COUNTDOWN
    ── ── ── ── ── ── ── ── ── ── ── ── ── ── ── ── */
