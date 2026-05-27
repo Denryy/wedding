@@ -102,7 +102,7 @@ export default async function handler(req, res) {
   const dateStr     = time ? formatDate(time) : "—";
 
   const text = [
-    "📩 *Жаңа RSVP жауабы!*",
+    "📩 *Жаңа қонақтан жауап келді!*",
     "",
     `👤 *Аты-жөні:* ${name.trim()}`,
     `✅ *Жауабы:* ${attendLabel}`,
