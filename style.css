@@ -320,21 +320,15 @@ body {
 
 /* TOP ROW */
 
-/* TOP ROW */
-
 .datetime__top {
   width: 100%;
 
   display: flex;
   align-items: center;
-  justify-content: space-between;
-
-  gap: 0;
+  justify-content: center;
 
   position: relative;
   z-index: 1;
-
-  padding: 0 22px;
 }
 
 .datetime__item {
@@ -342,24 +336,13 @@ body {
 
   display: flex;
   flex-direction: column;
+  align-items: center;
+
+  text-align: center;
 
   gap: 6px;
 
   padding: 4px 0;
-}
-
-/* LEFT SIDE */
-
-.datetime__item:first-child {
-  align-items: flex-start;
-  text-align: left;
-}
-
-/* RIGHT SIDE */
-
-.datetime__item:last-child {
-  align-items: flex-end;
-  text-align: right;
 }
 
 .datetime__icon {
@@ -384,7 +367,7 @@ body {
   width: 1px;
   height: 44px;
 
-  margin: 0 18px;
+  margin: 0 10px;
 
   background:
     linear-gradient(
