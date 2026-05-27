@@ -265,10 +265,209 @@ body {
 }
 
 /* ─────────────────────────────────────────
-   DATE & TIME — REF STYLE
+   DATE + TIME + COUNTDOWN
 ───────────────────────────────────────── */
 
 .datetime {
+  background: #f5f1ea;
+}
+
+.datetime .container {
+  position: relative;
+}
+
+.datetime__card {
+  position: relative;
+
+  background:
+    linear-gradient(
+      180deg,
+      rgba(255,255,255,0.96) 0%,
+      rgba(255,255,255,0.92) 100%
+    );
+
+  border: 1px solid rgba(201,169,110,0.35);
+  border-radius: 38px;
+
+  padding: 34px 22px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  box-shadow:
+    0 10px 30px rgba(176,141,87,0.08),
+    inset 0 1px 0 rgba(255,255,255,0.7);
+
+  overflow: hidden;
+  backdrop-filter: blur(4px);
+}
+
+.datetime__card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+
+  background:
+    radial-gradient(
+      circle at top left,
+      rgba(255,255,255,0.8),
+      transparent 40%
+    );
+
+  pointer-events: none;
+}
+
+.datetime__item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  gap: 10px;
+
+  padding: 12px 0;
+
+  position: relative;
+  z-index: 1;
+}
+
+.datetime__icon {
+  font-size: 1.4rem;
+  opacity: 0.85;
+  color: #c29a5c;
+}
+
+.datetime__value {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(1.2rem, 4vw, 1.55rem);
+  font-style: italic;
+
+  color: #c29a5c;
+
+  text-align: center;
+  line-height: 1.4;
+  letter-spacing: 0.02em;
+}
+
+.datetime__sep {
+  width: 120px;
+  height: 1px;
+
+  margin: 12px 0;
+
+  background:
+    linear-gradient(
+      to right,
+      transparent,
+      rgba(201,169,110,0.7),
+      transparent
+    );
+}
+
+/* COUNTDOWN */
+
+.datetime__countdown {
+  width: 100%;
+
+  margin-top: 24px;
+  padding-top: 26px;
+
+  border-top: 1px solid rgba(201,169,110,0.18);
+
+  position: relative;
+  z-index: 1;
+}
+
+.countdown__grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+
+  gap: 12px;
+}
+
+.countdown__block {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.countdown__num {
+  width: 68px;
+  height: 68px;
+
+  border-radius: 50%;
+
+  border: 1.5px solid rgba(201,169,110,0.6);
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  font-family: 'Playfair Display', serif;
+  font-size: 1.5rem;
+
+  color: #b08d57;
+
+  background: rgba(255,255,255,0.72);
+
+  box-shadow:
+    inset 0 1px 2px rgba(255,255,255,0.8),
+    0 4px 10px rgba(176,141,87,0.08);
+}
+
+.countdown__label {
+  margin-top: 8px;
+
+  font-size: 0.8rem;
+
+  color: #8b7355;
+
+  font-family: 'Cormorant Garamond', serif;
+
+  letter-spacing: 0.05em;
+
+  text-transform: lowercase;
+}
+
+.datetime__note {
+  margin-top: 26px;
+
+  text-align: center;
+
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(1rem, 3.2vw, 1.15rem);
+
+  font-style: italic;
+  line-height: 1.8;
+
+  color: #8b7355;
+
+  padding: 0 12px;
+}
+
+/* MOBILE */
+
+@media (max-width: 480px) {
+
+  .countdown__grid {
+    grid-template-columns: repeat(2, 1fr);
+    row-gap: 18px;
+  }
+
+  .countdown__num {
+    width: 62px;
+    height: 62px;
+
+    font-size: 1.35rem;
+  }
+
+}
+
+/* ─────────────────────────────────────────
+   DATE & TIME — REF STYLE
+───────────────────────────────────────── */
+
+/* .datetime {
   background: #f5f1ea;
 }
 
@@ -359,11 +558,11 @@ body {
   line-height: 1.8;
   color: #8b7355;
   padding: 0 12px;
-}
+} */
 /* ── ── ── ── ── ── ── ── ── ── ── ── ── ── ── ──
    COUNTDOWN
    ── ── ── ── ── ── ── ── ── ── ── ── ── ── ── ── */
-.countdown {
+/* .countdown {
   background: linear-gradient(135deg, #3a2e25 0%, #5c4a35 100%);
   color: #fff;
 }
@@ -407,7 +606,7 @@ body {
   line-height: 1;
   padding-bottom: 16px;
   opacity: 0.7;
-}
+} */
 
 /* ── ── ── ── ── ── ── ── ── ── ── ── ── ── ── ──
    VENUE — МЕСТО

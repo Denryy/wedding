@@ -77,7 +77,7 @@
        4. ДАТА И ВРЕМЯ
        Данные из CONFIG.event
   =================================================== -->
-  <section class="section datetime reveal" id="datetimeSection">
+  <!-- <section class="section datetime reveal" id="datetimeSection">
     <div class="container">
       <h2 class="section__title" id="datetimeTitle"></h2>
       <div class="datetime__card">
@@ -93,12 +93,73 @@
       </div>
       <p class="datetime__note" id="datetimeNote"></p>
     </div>
-  </section>
+  </section> -->
+
+  <!-- ===================================================
+     ДАТА + ВРЕМЯ + COUNTDOWN В ОДНОМ БЛОКЕ
+=================================================== -->
+<section class="section datetime reveal" id="datetimeSection">
+  <div class="container">
+
+    <h2 class="section__title" id="datetimeTitle"></h2>
+
+    <div class="datetime__card">
+
+      <!-- Дата -->
+      <div class="datetime__item">
+        <span class="datetime__icon">✧</span>
+        <span class="datetime__value" id="eventDate"></span>
+      </div>
+
+      <!-- Разделитель -->
+      <div class="datetime__sep"></div>
+
+      <!-- Время -->
+      <div class="datetime__item">
+        <span class="datetime__icon">✦</span>
+        <span class="datetime__value" id="eventTime"></span>
+      </div>
+
+      <!-- Countdown -->
+      <div class="datetime__countdown">
+
+        <div class="countdown__grid">
+
+          <div class="countdown__block">
+            <span class="countdown__num" id="cdDays">--</span>
+            <span class="countdown__label" id="cdDaysLabel"></span>
+          </div>
+
+          <div class="countdown__block">
+            <span class="countdown__num" id="cdHours">--</span>
+            <span class="countdown__label" id="cdHoursLabel"></span>
+          </div>
+
+          <div class="countdown__block">
+            <span class="countdown__num" id="cdMinutes">--</span>
+            <span class="countdown__label" id="cdMinutesLabel"></span>
+          </div>
+
+          <div class="countdown__block">
+            <span class="countdown__num" id="cdSeconds">--</span>
+            <span class="countdown__label" id="cdSecondsLabel"></span>
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+    <p class="datetime__note" id="datetimeNote"></p>
+
+  </div>
+</section>
 
   <!-- ===================================================
        5. COUNTDOWN — обратный отсчёт
   =================================================== -->
-  <section class="section countdown reveal" id="countdownSection">
+  <!-- <section class="section countdown reveal" id="countdownSection">
     <div class="container">
       <h2 class="section__title" id="countdownTitle"></h2>
       <div class="countdown__grid">
@@ -123,7 +184,7 @@
         </div>
       </div>
     </div>
-  </section>
+  </section> -->
 
   <!-- ===================================================
        6. МЕСТО — ресторан и карта
