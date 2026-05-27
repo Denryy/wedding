@@ -66,7 +66,7 @@ const CONFIG = {
     list: [
       {
         // role: "Күйеу жігіт жағынан",
-        name: "Асхат - Ақжарқын",
+        name: "Асхад - Ақжарқын",
         wide: true,
       }
     ],
@@ -236,23 +236,49 @@ function setText(id, text) {
 function renderParents() {
   const grid = document.getElementById("parentsGrid");
   if (!grid) return;
+
   grid.innerHTML = "";
 
   CONFIG.parents.list.forEach(p => {
     const card = document.createElement("div");
-    card.className = "parent__card reveal" + (p.wide ? " parent__card--wide" : "");
+    card.className = "parent__card reveal";
 
-    const role = document.createElement("p");
-    role.className = "parent__role";
-    role.textContent = p.role;
+    card.innerHTML = `
+      <svg class="parent__frame" viewBox="0 0 360 120" preserveAspectRatio="none">
+        <path
+          d="
+            M 28 1
+            H 332
+            C 332 18, 342 28, 359 28
+            V 92
+            C 342 92, 332 102, 332 119
+            H 28
+            C 28 102, 18 92, 1 92
+            V 28
+            C 18 28, 28 18, 28 1
+            Z
+          "
+          fill="rgba(255,255,255,0.78)"
+          stroke="rgba(201,169,110,0.55)"
+          stroke-width="1"
+        />
+      </svg>
+    `;
+
+    const topDecor = document.createElement("div");
+    topDecor.className = "parent__decor parent__decor--top";
 
     const name = document.createElement("p");
     name.className = "parent__name";
-    // \n → <br>
     name.innerHTML = p.name.replace(/\n/g, "<br>");
 
-    if (p.role) card.appendChild(role);;
+    const bottomDecor = document.createElement("div");
+    bottomDecor.className = "parent__decor parent__decor--bottom";
+
+    card.appendChild(topDecor);
     card.appendChild(name);
+    card.appendChild(bottomDecor);
+
     grid.appendChild(card);
   });
 }
