@@ -360,28 +360,64 @@ function initReveal() {
 /* =====================================================
    5. МУЗЫКА
    ===================================================== */
+/* =====================================================
+   5. МУЗЫКА
+   ===================================================== */
 function initMusic() {
   const btn   = document.getElementById("musicBtn");
   const audio = document.getElementById("bg-music");
-  let   playing = false;
 
+  if (!audio || !btn) return;
+
+  let playing = false;
+
+  audio.volume = 0.5;
+  audio.loop = true;
+
+  // Автозапуск через 0.5 секунды после входа
+  setTimeout(() => {
+    audio.play()
+      .then(() => {
+        playing = true;
+        btn.classList.add("playing");
+        btn.setAttribute("aria-label", "Музыканы өшіру");
+      })
+      .catch(() => {
+        console.info("Браузер заблокировал автозапуск. Музыка включится после первого клика.");
+
+        // Если autoplay заблокирован — включаем при первом клике по сайту
+        const startOnFirstClick = () => {
+          audio.play().then(() => {
+            playing = true;
+            btn.classList.add("playing");
+            btn.setAttribute("aria-label", "Музыканы өшіру");
+          }).catch(() => {});
+
+          document.removeEventListener("click", startOnFirstClick);
+          document.removeEventListener("touchstart", startOnFirstClick);
+        };
+
+        document.addEventListener("click", startOnFirstClick);
+        document.addEventListener("touchstart", startOnFirstClick);
+      });
+  }, 500);
+
+  // Кнопка вкл/выкл
   btn.addEventListener("click", () => {
     if (playing) {
       audio.pause();
+      playing = false;
       btn.classList.remove("playing");
       btn.setAttribute("aria-label", "Музыканы қосу");
     } else {
-      audio.play().catch(() => {
-        // Браузер может заблокировать автовоспроизведение — это нормально
-        console.info("Автовоспроизведение заблокировано браузером. Нажмите ещё раз.");
-      });
-      btn.classList.add("playing");
-      btn.setAttribute("aria-label", "Музыканы өшіру");
+      audio.play().then(() => {
+        playing = true;
+        btn.classList.add("playing");
+        btn.setAttribute("aria-label", "Музыканы өшіру");
+      }).catch(() => {});
     }
-    playing = !playing;
   });
 }
-
 
 /* =====================================================
    6. RSVP ФОРМА
