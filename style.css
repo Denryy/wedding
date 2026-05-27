@@ -489,7 +489,7 @@ body {
 
   .countdown__grid {
     grid-template-columns: repeat(4, 1fr);
-    row-gap: 4px;
+    row-gap: 10px;
   }
 
   .countdown__num {
