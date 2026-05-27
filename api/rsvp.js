@@ -14,15 +14,16 @@ const ATTEND_LABELS = {
   decline: "Өкінішке орай, келе алмаймын",
 };
 
-// Красивое форматирование даты: ISO → "14.06.2025, 18:00"
 function formatDate(isoString) {
   try {
-    return new Date(isoString).toLocaleString("ru-RU", {
-      day:    "2-digit",
-      month:  "2-digit",
-      year:   "numeric",
-      hour:   "2-digit",
+    return new Date(isoString).toLocaleString("kk-KZ", {
+      timeZone: "Asia/Almaty",
+      day: "2-digit",
+      month: "2-digit",
+      year: "numeric",
+      hour: "2-digit",
       minute: "2-digit",
+      hour12: false,
     });
   } catch {
     return isoString;
@@ -107,7 +108,7 @@ export default async function handler(req, res) {
     `👤 *Аты-жөні:* ${name.trim()}`,
     `✅ *Жауабы:* ${attendLabel}`,
     `👥 *Адам саны:* ${guestCount}`,
-    `🕒 *Уақыты:* ${dateStr}`,
+    `🕒 *Уақыты:* ${formatDate(time)}`,
   ].join("\n");
 
   // 8. Отправляем в Telegram Bot API
