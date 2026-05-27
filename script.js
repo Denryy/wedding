@@ -65,8 +65,9 @@ const CONFIG = {
     sectionTitle: "Той иелері",
     list: [
       {
+        // role: "Күйеу жігіт жағынан",
         name: "Асхат - Ақжарқын",
-        wide: false,
+        wide: true,
       }
     ],
   },
@@ -250,7 +251,7 @@ function renderParents() {
     // \n → <br>
     name.innerHTML = p.name.replace(/\n/g, "<br>");
 
-    card.appendChild(role);
+    if (p.role) card.appendChild(role);;
     card.appendChild(name);
     grid.appendChild(card);
   });
