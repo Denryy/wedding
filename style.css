@@ -320,27 +320,46 @@ body {
 
 /* TOP ROW */
 
+/* TOP ROW */
+
 .datetime__top {
   width: 100%;
 
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: space-between;
 
-  gap: 16px;
+  gap: 0;
 
   position: relative;
   z-index: 1;
+
+  padding: 0 22px;
 }
 
 .datetime__item {
+  flex: 1;
+
   display: flex;
   flex-direction: column;
-  align-items: center;
 
   gap: 6px;
 
   padding: 4px 0;
+}
+
+/* LEFT SIDE */
+
+.datetime__item:first-child {
+  align-items: flex-start;
+  text-align: left;
+}
+
+/* RIGHT SIDE */
+
+.datetime__item:last-child {
+  align-items: flex-end;
+  text-align: right;
 }
 
 .datetime__icon {
@@ -352,11 +371,11 @@ body {
 .datetime__value {
   font-family: 'Cormorant Garamond', serif;
   font-size: clamp(1rem, 4vw, 1.3rem);
+
   font-style: italic;
 
   color: #c29a5c;
 
-  text-align: center;
   line-height: 1.3;
   letter-spacing: 0.02em;
 }
@@ -364,6 +383,8 @@ body {
 .datetime__sep {
   width: 1px;
   height: 44px;
+
+  margin: 0 18px;
 
   background:
     linear-gradient(
